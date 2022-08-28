@@ -13,3 +13,11 @@
   color: white;
 }
 
+.todoDone {
+  color: green;
+}
+
+.todoUndone {
+  color: red;
+}
+
