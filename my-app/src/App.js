@@ -87,7 +87,19 @@ function App() {
 
   const handleEvent = (e) => {
     e.preventDefault();
-}
+  }
+
+  const markTodoAsDone = (index) => {
+    const newTodo = [...myTodos];
+    newTodo[index].done = true;
+    setMyTodos(newTodo);
+  }
+
+  const markTodoAsUndone = (index) => {
+    const newTodo = [...myTodos];
+    newTodo[index].done = false;
+    setMyTodos(newTodo);
+  }
 
 
   console.log(myTodos);
@@ -105,7 +117,7 @@ function App() {
                 Lägg till
             </button>
         </form>
-        <TodoList todos={myTodos}/>
+        <TodoList todos={myTodos} markTodoAsDone={markTodoAsDone} markTodoAsUndone={markTodoAsUndone}/>
       </header>
     </div>
   );
